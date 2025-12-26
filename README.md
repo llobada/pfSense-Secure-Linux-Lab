@@ -91,6 +91,14 @@ The lab simulates a real-world scenario where an internal Linux server is protec
 ![Firewall](screenshots/06-firewall-rules.png)
 
 ---
+### ℹ️ Why Port Forwarding Is Required
+
+Port forwarding was configured to access management interfaces (GUI) such as the pfSense web interface from the Windows host.
+
+All virtual machines were intentionally deployed **without graphical interfaces (CLI-only)** to conserve system resources and simulate a lightweight, server-oriented environment.
+
+Since pfSense and Debian run as script-based / command-line systems inside VirtualBox, port forwarding provides controlled external access to required services without adding unnecessary GUI components.
+---
 
 ## 🌍 Final Access Points
 
