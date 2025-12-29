@@ -45,7 +45,7 @@ The lab focuses on:
 sudo systemctl status nginx
 ```
 📷 Screenshot:  
-`Linux_NginxCheck.png`
+`Images/Linux_NginxCheck.png`
 
 ---
 
@@ -59,7 +59,7 @@ The lab is designed with **strict traffic separation**.
   VirtualBox **Internal Network (intnet)** → Fully isolated
 
 📷 Diagram:  
-`images/Network-Topology-01.png`
+`Images/Network-Topology-01.png`
 
 ### 🖥 Virtual Machines
 | VM | Interfaces | Purpose |
@@ -72,10 +72,10 @@ The lab is designed with **strict traffic separation**.
 ## ⚙️ Phase 3 — VirtualBox Network Configuration
 ### pfSense VM
 - **Adapter 1 → NAT (WAN)**  
-  ![Adapter 1 NAT](images/AD1.png)
+  ![Adapter 1 NAT](Images/AD1.png)
 
 - **Adapter 2 → Internal Network (LAN)**  
-  ![Adapter 2 Internal](images/AD2.png)
+  ![Adapter 2 Internal](Images/AD2.png)
 
 
 📌 Result:  
@@ -109,14 +109,14 @@ pfctl -d
 - Used only during initial setup
 
 📷 Screenshot:  
-`Firewall-Troubleshooting.png`
+`Images/Firewall-Troubleshooting.png`
 
 ---
 
 ## 🔁 Phase 6 — Port Forwarding (Management Access)
 Since there is no GUI on pfSense, **VirtualBox Port Forwarding** is used.
 
-📷 `images/PortForwardingVB.png`
+📷 `Images/PortForwardingVB.png`
 
 ### 🔐 Forward 1 — pfSense WebGUI
 | Setting | Value |
@@ -136,7 +136,7 @@ https://127.0.0.1:8443
 
 📌 Routes external requests from the Windows Host on port 9090 to the Debian web server (HTTP).
 
-📷 Screenshot: `images/PortForwardingVB.png`
+📷 Screenshot: `Images/PortForwardingVB.png`
 
 ---
 
@@ -147,7 +147,7 @@ With firewall disabled + port forwarding:
 - Interfaces assigned (WAN / LAN)
 
 📷 Dashboard:  
-`images/pfSense-Dashboard.png`
+`Images/pfSense-Dashboard.png`
 
 ---
 
@@ -164,7 +164,7 @@ Go to **pfSense WebGUI → Firewall → NAT and add the following:
 - Destination: pfSense
 
 📌 This rule allows the Windows host to access the pfSense WebGUI server via `https://127.0.0.1:8443` while the firewall is enabled.
-📷 Screenshot: `images/NAT-Rule-HTTPS.png`
+📷 Screenshot: `Images/NAT-Rule-HTTPS.png`
 
 ### 🔓 Rule 2 — Allow HTTP Access to Debian
 Go to **pfSense WebGUI → Firewall → NAT** and add the following:
@@ -177,7 +177,7 @@ Go to **pfSense WebGUI → Firewall → NAT** and add the following:
 - Source: Windows Host
 
 📌 This rule allows the Windows host to access the Debian web server via `http://127.0.0.1:9090/` while the firewall is enabled.
-📷 Screenshot: `images/NAT-Rule-HTTP.png`
+📷 Screenshot: `Images/NAT-Rule-HTTP.png`
 ---
 
 ## 🔒 Phase 9 — Firewall Re-Enable (Lockdown)
@@ -191,7 +191,7 @@ pfctl -e
 ---
 
 ## 🧪 Phase 10 — Validation: Accessing Nginx Services from Windows Host
-📷 `images/Final-Success-Result.png`
+📷 `Images/Final-Success-Result.png`
 
 ---
 
@@ -206,3 +206,4 @@ pfctl -e
 
 ## 👤 Author
 **Obad Darwish**
+
