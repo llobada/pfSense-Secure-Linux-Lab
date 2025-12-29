@@ -45,7 +45,7 @@ The lab focuses on:
 sudo systemctl status nginx
 ```
 📷 Screenshot:  
-`Images/Linux_NginxCheck.png`
+![NginxCheck](Images/Linux_NginxCheck.png)
 
 ---
 
@@ -59,7 +59,7 @@ The lab is designed with **strict traffic separation**.
   VirtualBox **Internal Network (intnet)** → Fully isolated
 
 📷 Diagram:  
-`Images/Network-Topology-01.png`
+![Network-Topology](Images/Network-Topology-01.png)
 
 ### 🖥 Virtual Machines
 | VM | Interfaces | Purpose |
@@ -109,14 +109,13 @@ pfctl -d
 - Used only during initial setup
 
 📷 Screenshot:  
-`Images/Firewall-Troubleshooting.png`
+![-](Images/Firewall-Troubleshooting.png)
 
 ---
 
 ## 🔁 Phase 6 — Port Forwarding (Management Access)
 Since there is no GUI on pfSense, **VirtualBox Port Forwarding** is used.
 
-📷 `Images/PortForwardingVB.png`
 
 ### 🔐 Forward 1 — pfSense WebGUI
 | Setting | Value |
@@ -136,7 +135,7 @@ https://127.0.0.1:8443
 
 📌 Routes external requests from the Windows Host on port 9090 to the Debian web server (HTTP).
 
-📷 Screenshot: `Images/PortForwardingVB.png`
+📷 Screenshot: ![PortForwardingVB](Images/PortForwardingVB.png)
 
 ---
 
@@ -147,7 +146,7 @@ With firewall disabled + port forwarding:
 - Interfaces assigned (WAN / LAN)
 
 📷 Dashboard:  
-`Images/pfSense-Dashboard.png`
+![pfSense-Dashboard](Images/pfSense-Dashboard.png)
 
 ---
 
@@ -164,7 +163,7 @@ Go to **pfSense WebGUI → Firewall → NAT and add the following:
 - Destination: pfSense
 
 📌 This rule allows the Windows host to access the pfSense WebGUI server via `https://127.0.0.1:8443` while the firewall is enabled.
-📷 Screenshot: `Images/NAT-Rule-HTTPS.png`
+📷 Screenshot: ![NAT-Rule-HTTPS](Images/NAT-Rule-HTTPS.png)
 
 ### 🔓 Rule 2 — Allow HTTP Access to Debian
 Go to **pfSense WebGUI → Firewall → NAT** and add the following:
@@ -177,7 +176,7 @@ Go to **pfSense WebGUI → Firewall → NAT** and add the following:
 - Source: Windows Host
 
 📌 This rule allows the Windows host to access the Debian web server via `http://127.0.0.1:9090/` while the firewall is enabled.
-📷 Screenshot: `Images/NAT-Rule-HTTP.png`
+📷 Screenshot:![NAT-Rule-HTTP](Images/NAT-Rule-HTTP.png)
 ---
 
 ## 🔒 Phase 9 — Firewall Re-Enable (Lockdown)
@@ -191,7 +190,7 @@ pfctl -e
 ---
 
 ## 🧪 Phase 10 — Validation: Accessing Nginx Services from Windows Host
-📷 `Images/Final-Success-Result.png`
+📷 ![-](Images/Final-Success-Result.png)
 
 ---
 
@@ -206,4 +205,5 @@ pfctl -e
 
 ## 👤 Author
 **Obad Darwish**
+
 
